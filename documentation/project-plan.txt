@@ -1,0 +1,41 @@
+HELP DESK TICKET ANALYTICS PROJECT
+
+PROJECT GOAL
+
+Analyze simulated IT help desk ticket data to identify common
+technical problems, support trends, resolution times, SLA
+performance, department needs, and technician performance.
+
+TOOLS
+
+- SQL
+- Python
+- pandas
+- matplotlib
+- Git
+- GitHub
+
+QUESTIONS TO ANSWER
+
+1. How many help desk tickets were submitted?
+2. What are the most common IT problems?
+3. Which departments submit the most tickets?
+4. What percentage of tickets are Low, Medium, High, or Critical?
+5. What is the average ticket resolution time?
+6. Which problems take the longest to resolve?
+7. Which technicians handle the most tickets?
+8. What is each technician's average resolution time?
+9. What percentage of tickets meet or miss SLA?
+10. Are ticket volumes increasing or decreasing over time?
+
+FINAL DELIVERABLES
+
+- Help desk ticket dataset
+- SQL database
+- SQL analysis queries
+- Python data cleaning script
+- Python analysis script
+- Charts and visualizations
+- GitHub repository
+- README explaining the project
+- Resume-ready project description
