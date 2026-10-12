@@ -41,3 +41,18 @@ FROM tickets;
 SELECT priority, COUNT(*) AS ticket_count
 FROM tickets
 GROUP BY priority;
+
+SELECT department, COUNT(*) AS ticket_count
+FROM tickets
+GROUP BY department
+ORDER BY ticket_count DESC;
+
+SELECT category, COUNT(*) AS ticket_count
+FROM tickets
+GROUP BY category
+ORDER BY ticket_count DESC;
+
+SELECT department, AVG(resolution_time_hours) AS avg_resolution_time
+FROM tickets
+GROUP BY department
+ORDER BY avg_resolution_time DESC;
