@@ -56,3 +56,27 @@ SELECT department, AVG(resolution_time_hours) AS avg_resolution_time
 FROM tickets
 GROUP BY department
 ORDER BY avg_resolution_time DESC;
+
+SELECT *
+FROM tickets
+WHERE priority = 'High'
+AND sla_status = 'Missed';
+
+SELECT *
+FROM tickets
+WHERE department = 'HR'
+OR department = 'Finance';
+
+SELECT *
+FROM tickets
+WHERE priority IN ('High', 'Critical');
+
+SELECT *
+FROM tickets
+WHERE opened_date >= '2026-09-03';
+
+SELECT ticket_id, department, category, priority, resolution_time_hours
+FROM tickets
+WHERE priority IN ('High', 'Critical')
+AND resolution_time_hours > 2
+ORDER BY resolution_time_hours DESC;
