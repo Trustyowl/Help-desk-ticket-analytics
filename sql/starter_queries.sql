@@ -26,3 +26,18 @@ WHERE priority = 'High'
 ORDER BY resolution_time_hours DESC
 LIMIT 3;
 
+SELECT COUNT(*) AS total_tickets
+FROM tickets;
+
+SELECT AVG(resolution_time_hours) AS average_resolution_time
+FROM tickets;
+
+SELECT MIN(resolution_time_hours) AS fastest_resolution
+FROM tickets;
+
+SELECT MAX(resolution_time_hours) AS slowest_resolution
+FROM tickets;
+
+SELECT priority, COUNT(*) AS ticket_count
+FROM tickets
+GROUP BY priority;
