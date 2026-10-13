@@ -91,3 +91,17 @@ SELECT
         ELSE 'Slow'
     END AS resolution_speed
 FROM tickets;
+
+SELECT
+    sla_status,
+    COUNT(*) AS ticket_count
+FROM tickets
+GROUP BY sla_status;
+
+SELECT
+    priority,
+    COUNT(*) AS missed_sla_tickets
+FROM tickets
+WHERE sla_status = 'Missed'
+GROUP BY priority
+ORDER BY missed_sla_tickets DESC;
