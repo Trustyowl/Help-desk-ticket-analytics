@@ -80,3 +80,14 @@ FROM tickets
 WHERE priority IN ('High', 'Critical')
 AND resolution_time_hours > 2
 ORDER BY resolution_time_hours DESC;
+
+SELECT
+    ticket_id,
+    category,
+    resolution_time_hours,
+    CASE
+        WHEN resolution_time_hours <= 2 THEN 'Fast'
+        WHEN resolution_time_hours <= 8 THEN 'Normal'
+        ELSE 'Slow'
+    END AS resolution_speed
+FROM tickets;
