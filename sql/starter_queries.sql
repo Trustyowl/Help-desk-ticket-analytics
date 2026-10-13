@@ -105,3 +105,18 @@ FROM tickets
 WHERE sla_status = 'Missed'
 GROUP BY priority
 ORDER BY missed_sla_tickets DESC;
+
+SELECT
+    technician,
+    COUNT(*) AS tickets_handled,
+    AVG(resolution_time_hours) AS avg_resolution_time
+FROM tickets
+GROUP BY technician
+ORDER BY tickets_handled DESC;
+
+SELECT
+    technician,
+    AVG(satisfaction_score) AS avg_satisfaction
+FROM tickets
+GROUP BY technician
+ORDER BY avg_satisfaction DESC;
