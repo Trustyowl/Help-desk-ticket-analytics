@@ -46,3 +46,11 @@ SELECT
 FROM tickets
 GROUP BY technician
 ORDER BY sla_met DESC;
+
+SELECT
+    priority,
+    COUNT(*) AS ticket_count,
+    AVG(resolution_time_hours) AS avg_resolution_time
+FROM tickets
+GROUP BY priority
+ORDER BY avg_resolution_time DESC;
