@@ -54,3 +54,10 @@ SELECT
 FROM tickets
 GROUP BY priority
 ORDER BY avg_resolution_time DESC;
+
+SELECT
+    opened_date,
+    COUNT(*) AS tickets_opened
+FROM tickets
+GROUP BY opened_date
+ORDER BY opened_date;
