@@ -12,3 +12,15 @@ print(tickets.info())
 
 print("\nTotal tickets:")
 print(len(tickets))
+
+print("\nAverage resolution time:")
+print(tickets["resolution_time_hours"].mean())
+
+print("\nAverage satisfaction score:")
+print(tickets["satisfaction_score"].mean())
+
+print("\nTickets by priority:")
+print(tickets["priority"].value_counts())
+
+print("\nTickets by department:")
+print(tickets["department"].value_counts())
