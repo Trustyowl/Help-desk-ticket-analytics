@@ -24,3 +24,6 @@ print(tickets["priority"].value_counts())
 
 print("\nTickets by department:")
 print(tickets["department"].value_counts())
+
+print("\nMissing values by column:")
+print(tickets.isnull().sum())
