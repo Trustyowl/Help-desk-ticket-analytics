@@ -1,4 +1,5 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 
 csv_path = r"C:\Help-Desk-Ticket-Analytics\data\helpdesk_tickets.csv"
 
@@ -48,3 +49,78 @@ print(
     .mean()
     .sort_values(ascending=False)
 )
+
+priority_counts = tickets["priority"].value_counts()
+
+priority_counts.plot(
+    kind="bar",
+    title="Help Desk Tickets by Priority"
+)
+
+plt.xlabel("Priority")
+plt.ylabel("Number of Tickets")
+plt.tight_layout()
+
+plt.savefig(
+    r"C:\Help-Desk-Ticket-Analytics\screenshots\tickets_by_priority.png"
+)
+
+plt.show()
+
+sla_counts = tickets["sla_status"].value_counts()
+
+sla_counts.plot(
+    kind="bar",
+    title="SLA Performance"
+)
+
+plt.xlabel("SLA Status")
+plt.ylabel("Number of Tickets")
+plt.tight_layout()
+
+plt.savefig(
+    r"C:\Help-Desk-Ticket-Analytics\screenshots\sla_performance.png"
+)
+
+plt.close()
+
+department_counts = tickets["department"].value_counts()
+
+department_counts.plot(
+    kind="bar",
+    title="Help Desk Tickets by Department"
+)
+
+plt.xlabel("Department")
+plt.ylabel("Number of Tickets")
+plt.tight_layout()
+
+plt.savefig(
+    r"C:\Help-Desk-Ticket-Analytics\screenshots\tickets_by_department.png"
+)
+
+plt.close()
+
+technician_resolution = (
+    tickets.groupby("technician")["resolution_time_hours"]
+    .mean()
+    .sort_values()
+)
+
+technician_resolution.plot(
+    kind="bar",
+    title="Average Resolution Time by Technician"
+)
+
+plt.xlabel("Technician")
+plt.ylabel("Average Resolution Time (Hours)")
+plt.tight_layout()
+
+plt.savefig(
+    r"C:\Help-Desk-Ticket-Analytics\screenshots\technician_resolution_time.png"
+)
+
+plt.close()
+
+
+
