@@ -27,3 +27,24 @@ print(tickets["department"].value_counts())
 
 print("\nMissing values by column:")
 print(tickets.isnull().sum())
+
+print("\nAverage resolution time by department:")
+print(
+    tickets.groupby("department")["resolution_time_hours"]
+    .mean()
+    .sort_values(ascending=False)
+)
+
+print("\nAverage resolution time by priority:")
+print(
+    tickets.groupby("priority")["resolution_time_hours"]
+    .mean()
+    .sort_values(ascending=False)
+)
+
+print("\nAverage satisfaction by technician:")
+print(
+    tickets.groupby("technician")["satisfaction_score"]
+    .mean()
+    .sort_values(ascending=False)
+)
